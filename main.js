@@ -55,19 +55,15 @@ boton.addEventListener("click", function () {
     case "iniciar":
       console.log("Iniciando el juego");
       break;
-
     case "configuracion":
       console.log("Abriendo configuración");
       break;
-
     case "creditos":
       console.log("Mostrando créditos");
       break;
-
     case "salir":
       console.log("Saliendo del juego");
       break;
-
     default:
       console.log("Opción no válida");
   }
@@ -247,3 +243,4 @@ localStorage.setItem("jugador", JSON.stringify(jugadorStorage));
 const jugadorRecuperado = JSON.parse(localStorage.getItem("jugador"));
 // mostrar
 console.log(jugadorRecuperado);
+// mejora 1
