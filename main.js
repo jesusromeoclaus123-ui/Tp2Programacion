@@ -22,13 +22,10 @@ const mensaje = document.getElementById("mensaje");
 
 boton.addEventListener("click", function () {
   const valor = input.value;
-
   // Convertir a número
   const numero = Number(valor);
-
   // Sumar 10
   const resultado = numero + 10;
-
   // Mostrar en pantalla
   mensaje.textContent = resultado;
 });
@@ -189,3 +186,64 @@ const nombres = listaPersonajes.map((personaje) => {
 });
 console.log(nombres);
 
+// Ejercicio 21
+const personajeEncontrado = listaPersonajes.find((personaje) => {
+  return personaje.nombre === "Kai";
+});
+console.log(personajeEncontrado);
+
+// Ejercicio 22
+const vidaTotal = listaPersonajes.reduce((acumulador, personaje) => {
+  return acumulador + personaje.vida;
+}, 0);
+console.log(vidaTotal);
+
+// Ejercicio 23
+document.addEventListener("DOMContentLoaded", function () {
+  const mensaje = document.getElementById("mensaje");
+  mensaje.textContent = "Bienvenido a la guía de JavaScript";
+  mensaje.style.color = "blue";
+});
+
+// Ejercicio 24
+document.addEventListener("DOMContentLoaded", function () {
+  const boton = document.getElementById("btn");
+  const mensaje = document.getElementById("mensaje");
+
+  let puntos = 0;
+
+  boton.addEventListener("click", function () {
+    puntos += 10;
+    mensaje.textContent = "Puntos: " + puntos;
+  });
+});
+
+// Ejercicio 25
+document.addEventListener("DOMContentLoaded", function () {
+  const input = document.getElementById("dato");
+  const boton = document.getElementById("btn");
+  const mensaje = document.getElementById("mensaje");
+  let puntos = 0;
+  boton.addEventListener("click", function () {
+    const nombre = input.value.trim();
+    // sumar puntos siempre
+    puntos += 10;
+    if (nombre === "") {
+      mensaje.textContent = "Puntos: " + puntos + " | Ingresá un nombre para continuar";
+    } else {
+      mensaje.textContent = "Puntos: " + puntos + " | Bienvenido/a " + nombre;
+    }
+  });
+});
+
+// Ejercicio 26
+const jugadorStorage = {
+  nombre: "Luna",
+  puntaje: 1500
+};
+// guardar
+localStorage.setItem("jugador", JSON.stringify(jugadorStorage));
+// recuperar
+const jugadorRecuperado = JSON.parse(localStorage.getItem("jugador"));
+// mostrar
+console.log(jugadorRecuperado);
