@@ -247,3 +247,4 @@ localStorage.setItem("jugador", JSON.stringify(jugadorStorage));
 const jugadorRecuperado = JSON.parse(localStorage.getItem("jugador"));
 // mostrar
 console.log(jugadorRecuperado);
+// mejora 2
